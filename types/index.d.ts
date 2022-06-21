@@ -206,6 +206,7 @@ export interface ProduceRequest {
   key?: string | Buffer;
   partition?: number;
   attributes?: number;
+  timestamp?: number;
 }
 
 export interface ConsumerOptions {
