@@ -23,6 +23,19 @@ export class KafkaClient extends EventEmitter {
   loadMetadataForTopics (topics: string[], callback: (error: any, result: MetadataResponse) => any): void;
 }
 
+export class Admin extends EventEmitter {
+  
+  listGroups(cb?: () => void): void;
+
+  listTopics(cb?: () => void): void;
+
+  describeGroups(consumerGroups:ConsumerGroup, cb?:() => void): void;
+
+  createTopics(topics:string[], cb?:() => void): void;
+
+  describeConfigs(payloads:any, cb?:() => void): void
+}
+
 export class Producer extends EventEmitter {
   constructor (client: KafkaClient, options?: ProducerOptions, customPartitioner?: CustomPartitioner);
 

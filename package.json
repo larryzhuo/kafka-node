@@ -1,5 +1,5 @@
 {
-  "name": "kafka-node",
+  "name": "dgty-kafka-node",
   "description": "Client for Apache Kafka v0.9.x, v0.10.x and v0.11.x",
   "keywords": [
     "kafka",
