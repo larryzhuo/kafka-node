@@ -36,9 +36,9 @@ export class Admin extends EventEmitter {
 
   describeGroups(consumerGroups:ConsumerGroup, cb?:() => void): void;
 
-  createTopics(topics:string[], cb?:(error:any, result:CreateTopicResponse[]) => void): void;
+  createTopics(topics:CreateTopicRequest[], cb?:(error:any, result:CreateTopicResponse[]) => void): void;
 
-  createTopicsWrapper(topics:string[]): Promise<CreateTopicResponse[]>;
+  createTopicsWrapper(topics:CreateTopicRequest[]): Promise<CreateTopicResponse[]>;
 
   describeConfigs(payloads:any, cb?:() => void): void
 }
