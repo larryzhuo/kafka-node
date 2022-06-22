@@ -1,6 +1,16 @@
 import { Readable, Writable } from 'stream';
 import { EventEmitter } from 'events';
 
+export class BaseProducer extends EventEmitter {
+  static PARTITIONER_TYPES : {
+    default: 0,
+    random: 1,
+    cyclic: 2,
+    keyed: 3,
+    custom: 4
+  }
+}
+
 export class KafkaClient extends EventEmitter {
   constructor (options?: KafkaClientOptions);
   clientId: string;
