@@ -26,13 +26,13 @@ export class KafkaClient extends EventEmitter {
 export class Admin extends EventEmitter {
   constructor(client: KafkaClient);
 
-  listGroups(cb?: () => void): void;
+  listGroups(cb?: (error:any, data:any) => void): void;
 
-  listTopics(cb?: () => void): void;
+  listTopics(cb?: (error:any, data:any) => void): void;
 
   describeGroups(consumerGroups:ConsumerGroup, cb?:() => void): void;
 
-  createTopics(topics:string[], cb?:() => void): void;
+  createTopics(topics:string[], cb?:(error:any, result:CreateTopicResponse[]) => void): void;
 
   describeConfigs(payloads:any, cb?:() => void): void
 }
