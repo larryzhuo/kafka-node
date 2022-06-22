@@ -30,9 +30,13 @@ export class Admin extends EventEmitter {
 
   listTopics(cb?: (error:any, data:any) => void): void;
 
+  listTopicsWrapper(): Promise<any>;
+
   describeGroups(consumerGroups:ConsumerGroup, cb?:() => void): void;
 
   createTopics(topics:string[], cb?:(error:any, result:CreateTopicResponse[]) => void): void;
+
+  createTopicsWrapper(topics:string[]): Promise<CreateTopicResponse[]>;
 
   describeConfigs(payloads:any, cb?:() => void): void
 }
@@ -44,6 +48,8 @@ export class Producer extends EventEmitter {
   on (eventName: 'error', cb: (error: any) => any): this;
 
   send (payloads: ProduceRequest[], cb: (error: any, data: any) => any): void;
+
+  sendWrapper (payloads: ProduceRequest[]): Promise<any>;
 
   createTopics (topics: string[], async: boolean, cb: (error: any, data: any) => any): void;
   createTopics (topics: string[], cb: (error: any, data: any) => any): void;
