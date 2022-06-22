@@ -24,7 +24,8 @@ export class KafkaClient extends EventEmitter {
 }
 
 export class Admin extends EventEmitter {
-  
+  constructor(client: KafkaClient);
+
   listGroups(cb?: () => void): void;
 
   listTopics(cb?: () => void): void;
