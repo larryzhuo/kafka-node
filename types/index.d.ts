@@ -21,6 +21,8 @@ export class KafkaClient extends EventEmitter {
   createTopics (topics: CreateTopicRequest[], callback: (error: any, result: CreateTopicResponse[]) => any): void;
 
   loadMetadataForTopics (topics: string[], callback: (error: any, result: MetadataResponse) => any): void;
+
+  getMetadatas(): ClusterMetadataResponse_metadata;
 }
 
 export class Admin extends EventEmitter {
@@ -352,18 +354,21 @@ export interface ClusterMetadataResponse {
   clusterMetadata: {
     controllerId: number;
   };
-  metadata: {
-    [topic: string]: {
-      [partition: number]: {
-        leader: number;
-        partition: number;
-        topic: string;
-        replicas: number[];
-        isr: number[];
-      };
+  metadata: ClusterMetadataResponse_metadata;
+}
+
+export interface ClusterMetadataResponse_metadata {
+  [topic: string]: {
+    [partition: number]: {
+      leader: number;
+      partition: number;
+      topic: string;
+      replicas: number[];
+      isr: number[];
     };
   };
 }
+
 
 export interface MetadataResponse extends Array<BrokerMetadataResponse|ClusterMetadataResponse> {
   0: BrokerMetadataResponse;
