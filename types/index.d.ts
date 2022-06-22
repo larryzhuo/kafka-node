@@ -3,6 +3,9 @@ import { EventEmitter } from 'events';
 
 export class KafkaClient extends EventEmitter {
   constructor (options?: KafkaClientOptions);
+  clientId: string;
+  brokers: object;
+  ready: boolean;
 
   close (cb?: () => void): void;
 
