@@ -56,6 +56,11 @@ declare class BaseProducer {
      * @param {BaseProducer~sendCallback} cb A function to call once the send has completed
      */
     send(payloads: any, cb: any): void;
+    /**
+     * async wrapper
+     * @param {*} payloads
+     */
+    sendWrapper(payloads: any): Promise<any>;
     buildPayloads(payloads: any, topicMetadata: any): any;
     createTopics(topics: any, async: any, cb: any): any;
     close(cb: any): void;

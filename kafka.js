@@ -6,6 +6,7 @@ exports.ConsumerGroup = require('./lib/consumerGroup');
 exports.ConsumerGroupStream = require('./lib/consumerGroupStream');
 exports.Consumer = require('./lib/consumer');
 exports.ConsumerStream = require('./lib/consumerStream');
+exports.Producer = require('');
 exports.Producer = require('./lib/producer');
 exports.KafkaClient = require('./lib/kafkaClient');
 exports.Offset = require('./lib/offset');
