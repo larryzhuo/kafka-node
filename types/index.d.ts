@@ -130,6 +130,7 @@ export class ConsumerGroup {
   on (eventName: 'message', cb: (message: Message) => any): void;
   on (eventName: 'error' | 'offsetOutOfRange', cb: (error: any) => any): void;
   on (eventName: 'rebalancing' | 'rebalanced' | 'connect', cb: () => any): void;
+  on (eventName: 'done', cb: (topics:any) => any): void;
 
   addTopics (topics: string[] | Topic[], cb?: (error: any, added: string[] | Topic[]) => any): void;
 
